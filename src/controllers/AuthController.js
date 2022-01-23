@@ -1,8 +1,9 @@
+import { v4 as uuidv4 } from 'uuid';
 import User from '../models/User';
+import Session from '../models/Session';
 import TryCatch from '../decorators/TryCatchMiddlewareDecorator';
 import HttpError from '../exeptions/HttpError';
 import { hashPassword, checkPassword } from '../helpers/password';
-import { createAuthToken } from '../helpers/auth';
 
 class AuthController {
   @TryCatch
@@ -14,21 +15,18 @@ class AuthController {
       throw new HttpError('Incorrect login or password', 401);
     }
 
-    // console.log(user);
-
-    /* eslint no-underscore-dangle: ["error", { "allow": ["_id"] }] */
-    const authToken = await createAuthToken({ id: String(user._id) });
-
-    console.log('authToken------>', authToken);
+    const authToken = uuidv4();
+    const session = await Session.create({ userId: user.id, token: authToken });
 
     res.json({
       status: true,
       user: {
+        // eslint-disable-next-line no-underscore-dangle
         id: user._id,
         name: user.name,
         email: user.email,
       },
-      authToken,
+      token: session.token,
     });
   }
 
@@ -45,6 +43,7 @@ class AuthController {
     res.json({
       status: true,
       user: {
+        // eslint-disable-next-line no-underscore-dangle
         id: user._id,
         name: user.name,
         email: user.email,

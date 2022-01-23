@@ -17,9 +17,7 @@ class PostsController {
 
   @TryCatch
   static async create(req, res) {
-    console.log(`middleware "Authorize" добавил userId:${req.userId} в request`);
     const model = new Post({ ...req.body, authorId: req.userId });
-    console.log('Сформировали данные для их сохранения в коллекции БД', model);
     const post = await model.save();
 
     res.json({ status: true, post });
