@@ -30,6 +30,6 @@ app.use('*', (request, response) => {
 
 app.use(ErrorHandler);
 
-app.listen(80, () => {
+app.listen(process.env.PORT || 80, () => {
   console.log('Express server run http://localhost:3000/');
 });
