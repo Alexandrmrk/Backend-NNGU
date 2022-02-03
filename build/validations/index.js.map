@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/validations/index.js"],"names":["auth","posts"],"mappings":";;;;;;;;;AAAA;;AACA;;;;;;eAEe;AAAEA,EAAAA,IAAI,EAAJA,IAAF;AAAQC,EAAAA,KAAK,EAALA;AAAR,C","sourcesContent":["import * as auth from './auth';\nimport * as posts from './posts';\n\nexport default { auth, posts };\n"],"file":"index.js"}
