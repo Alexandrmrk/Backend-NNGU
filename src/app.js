@@ -16,6 +16,7 @@ mongoose
   .catch((e) => console.log(e));
 
 const app = express();
+
 app.use(cors());
 app.use(bodyParser.json());
 
