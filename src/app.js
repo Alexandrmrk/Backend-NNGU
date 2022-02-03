@@ -21,13 +21,15 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.use('/api', ...routes);
-
+app.get('/', (req, res) => {
+  res.end('HOME');
+});
 app.use('*', (request, response) => {
   response.status(404).send('Endpoint not found on server!');
 });
 
 app.use(ErrorHandler);
 
-app.listen(3000, () => {
+app.listen(80, () => {
   console.log('Express server run http://localhost:3000/');
 });
