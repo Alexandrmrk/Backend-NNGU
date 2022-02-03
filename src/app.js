@@ -4,7 +4,7 @@ import path from 'path';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
-import routes from './routes';
+// import routes from './routes';
 import ErrorHandler from './middleware/ErrorHandler';
 
 const root = path.join.bind(this, __dirname, '../');
@@ -19,7 +19,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-app.use('/api', ...routes);
+// app.use('/api', ...routes);
 
 app.use('*', (request, response) => {
   response.status(404).send('Endpoint not found on server!');
