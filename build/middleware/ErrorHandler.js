@@ -1,5 +1,7 @@
 "use strict";
 
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -8,8 +10,6 @@ exports["default"] = _default;
 var _httpErrors = _interopRequireDefault(require("http-errors"));
 
 var _expressValidation = require("express-validation");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _default(error, req, res, next) {
   console.error(error);

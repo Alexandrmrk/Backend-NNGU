@@ -1,1 +1,1 @@
-{"version":3,"sources":["../../src/routes/index.js"],"names":["auth","posts"],"mappings":";;;;;;;AAAA;;AACA;;;;eAEe,CAACA,gBAAD,EAAOC,iBAAP,C","sourcesContent":["import auth from './auth';\nimport posts from './posts';\n\nexport default [auth, posts];\n"],"file":"index.js"}
+{"version":3,"sources":["../../src/routes/index.js"],"names":["auth","posts"],"mappings":";;;;;;;;;AAAA;;AACA;;eAEe,CAACA,gBAAD,EAAOC,iBAAP,C","sourcesContent":["import auth from './auth';\nimport posts from './posts';\n\nexport default [auth, posts];\n"],"file":"index.js"}

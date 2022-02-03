@@ -1,5 +1,7 @@
 "use strict";
 
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -14,8 +16,6 @@ var _PostsController = _interopRequireDefault(require("../controllers/PostsContr
 var _Authorize = _interopRequireDefault(require("../middleware/Authorize"));
 
 var _validations = _interopRequireDefault(require("../validations"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var router = (0, _express.Router)();
 router.get('/post/:id', _PostsController["default"].read);

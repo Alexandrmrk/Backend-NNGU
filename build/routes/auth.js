@@ -1,5 +1,7 @@
 "use strict";
 
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -12,8 +14,6 @@ var _expressValidation = require("express-validation");
 var _AuthController = _interopRequireDefault(require("../controllers/AuthController"));
 
 var _validations = _interopRequireDefault(require("../validations"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var router = (0, _express.Router)();
 router.post('/signin', (0, _expressValidation.validate)(_validations["default"].auth.signinValidation, {}, {}), _AuthController["default"].signin);

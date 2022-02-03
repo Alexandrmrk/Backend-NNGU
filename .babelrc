@@ -1,13 +1,13 @@
 {
-    "presets": [
-        "@babel/preset-env"
+  "presets": ["@babel/preset-env"],
+  "plugins": [
+    [
+      "@babel/plugin-proposal-decorators",
+
+      {
+        "legacy": true
+      }
     ],
-    "plugins": [
-        [
-            "@babel/plugin-proposal-decorators",
-            {
-                "legacy": true
-            }
-        ]
-    ]
+    ["@babel/transform-runtime"]
+  ]
 }
